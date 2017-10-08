@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F888F71B1F8A644B00E3A0EC /* SadMacView.h in Headers */ = {isa = PBXBuildFile; fileRef = F888F71A1F8A644B00E3A0EC /* SadMacView.h */; };
+		F888F71D1F8A644B00E3A0EC /* SadMacView.m in Sources */ = {isa = PBXBuildFile; fileRef = F888F71C1F8A644B00E3A0EC /* SadMacView.m */; };
+		F888F7271F8B154300E3A0EC /* SadMac.png in Resources */ = {isa = PBXBuildFile; fileRef = F888F7241F8B154300E3A0EC /* SadMac.png */; };
+		F888F7281F8B154300E3A0EC /* SadMacScene.h in Headers */ = {isa = PBXBuildFile; fileRef = F888F7251F8B154300E3A0EC /* SadMacScene.h */; };
+		F888F7291F8B154300E3A0EC /* SadMacScene.m in Sources */ = {isa = PBXBuildFile; fileRef = F888F7261F8B154300E3A0EC /* SadMacScene.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F888F7171F8A644B00E3A0EC /* SadMac.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SadMac.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		F888F71A1F8A644B00E3A0EC /* SadMacView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SadMacView.h; sourceTree = "<group>"; };
+		F888F71C1F8A644B00E3A0EC /* SadMacView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SadMacView.m; sourceTree = "<group>"; };
+		F888F71E1F8A644B00E3A0EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F888F7241F8B154300E3A0EC /* SadMac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SadMac.png; sourceTree = "<group>"; };
+		F888F7251F8B154300E3A0EC /* SadMacScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SadMacScene.h; sourceTree = "<group>"; };
+		F888F7261F8B154300E3A0EC /* SadMacScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SadMacScene.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F888F7131F8A644B00E3A0EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F888F70D1F8A644B00E3A0EC = {
+			isa = PBXGroup;
+			children = (
+				F888F7191F8A644B00E3A0EC /* SadMac */,
+				F888F7181F8A644B00E3A0EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F888F7181F8A644B00E3A0EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F888F7171F8A644B00E3A0EC /* SadMac.saver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F888F7191F8A644B00E3A0EC /* SadMac */ = {
+			isa = PBXGroup;
+			children = (
+				F888F71A1F8A644B00E3A0EC /* SadMacView.h */,
+				F888F71C1F8A644B00E3A0EC /* SadMacView.m */,
+				F888F71E1F8A644B00E3A0EC /* Info.plist */,
+				F888F7241F8B154300E3A0EC /* SadMac.png */,
+				F888F7251F8B154300E3A0EC /* SadMacScene.h */,
+				F888F7261F8B154300E3A0EC /* SadMacScene.m */,
+			);
+			path = SadMac;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F888F7141F8A644B00E3A0EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F888F7281F8B154300E3A0EC /* SadMacScene.h in Headers */,
+				F888F71B1F8A644B00E3A0EC /* SadMacView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F888F7161F8A644B00E3A0EC /* SadMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F888F7211F8A644B00E3A0EC /* Build configuration list for PBXNativeTarget "SadMac" */;
+			buildPhases = (
+				F888F7121F8A644B00E3A0EC /* Sources */,
+				F888F7131F8A644B00E3A0EC /* Frameworks */,
+				F888F7141F8A644B00E3A0EC /* Headers */,
+				F888F7151F8A644B00E3A0EC /* Resources */,
+				F888F72A1F8B16EC00E3A0EC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SadMac;
+			productName = SadMac;
+			productReference = F888F7171F8A644B00E3A0EC /* SadMac.saver */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F888F70E1F8A644B00E3A0EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Stefan Arentz";
+				TargetAttributes = {
+					F888F7161F8A644B00E3A0EC = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F888F7111F8A644B00E3A0EC /* Build configuration list for PBXProject "SadMac" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F888F70D1F8A644B00E3A0EC;
+			productRefGroup = F888F7181F8A644B00E3A0EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F888F7161F8A644B00E3A0EC /* SadMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F888F7151F8A644B00E3A0EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F888F7271F8B154300E3A0EC /* SadMac.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F888F72A1F8B16EC00E3A0EC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCREEN_SAVER_PATH=\"${HOME}/Library/Screen Savers/${FULL_PRODUCT_NAME}\"\nif [[ -d \"${SCREEN_SAVER_PATH}\" || -f \"${SCREEN_SAVER_PATH}\" || -L \"${SCREEN_SAVER_PATH}\" ]]; then\nrm -Rf \"${SCREEN_SAVER_PATH}\"\nfi\nln -s \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SCREEN_SAVER_PATH}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F888F7121F8A644B00E3A0EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F888F71D1F8A644B00E3A0EC /* SadMacView.m in Sources */,
+				F888F7291F8B154300E3A0EC /* SadMacScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F888F71F1F8A644B00E3A0EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F888F7201F8A644B00E3A0EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F888F7221F8A644B00E3A0EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NTLVDQ6CE4;
+				INFOPLIST_FILE = SadMac/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.arentz.SadMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Debug;
+		};
+		F888F7231F8A644B00E3A0EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NTLVDQ6CE4;
+				INFOPLIST_FILE = SadMac/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.arentz.SadMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F888F7111F8A644B00E3A0EC /* Build configuration list for PBXProject "SadMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F888F71F1F8A644B00E3A0EC /* Debug */,
+				F888F7201F8A644B00E3A0EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F888F7211F8A644B00E3A0EC /* Build configuration list for PBXNativeTarget "SadMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F888F7221F8A644B00E3A0EC /* Debug */,
+				F888F7231F8A644B00E3A0EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F888F70E1F8A644B00E3A0EC /* Project object */;
+}
