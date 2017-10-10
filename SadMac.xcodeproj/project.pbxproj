@@ -153,7 +153,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SCREEN_SAVER_PATH=\"${HOME}/Library/Screen Savers/${FULL_PRODUCT_NAME}\"\nif [[ -d \"${SCREEN_SAVER_PATH}\" || -f \"${SCREEN_SAVER_PATH}\" || -L \"${SCREEN_SAVER_PATH}\" ]]; then\nrm -Rf \"${SCREEN_SAVER_PATH}\"\nfi\nln -s \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SCREEN_SAVER_PATH}\"\n";
+			shellScript = "if [[ \"${XCS}\" == \"1\" ]]; then\nexit 0\nfi\n\nSCREEN_SAVER_PATH=\"${HOME}/Library/Screen Savers/${FULL_PRODUCT_NAME}\"\nif [[ -d \"${SCREEN_SAVER_PATH}\" || -f \"${SCREEN_SAVER_PATH}\" || -L \"${SCREEN_SAVER_PATH}\" ]]; then\nrm -Rf \"${SCREEN_SAVER_PATH}\"\nfi\nln -s \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\" \"${SCREEN_SAVER_PATH}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
