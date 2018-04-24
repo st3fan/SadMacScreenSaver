@@ -59,6 +59,8 @@ CGVector RandomVelocity() {
         node.physicsBody.density = 0.5;
         node.physicsBody.angularVelocity = RandomAngularVelocity();
         node.physicsBody.velocity = RandomVelocity();
+        node.physicsBody.categoryBitMask = 2;
+        node.physicsBody.contactTestBitMask = 1;
     }
 
     return node;
@@ -66,6 +68,11 @@ CGVector RandomVelocity() {
 
 - (void)sceneDidLoad {
     self.backgroundColor = [NSColor blackColor];
+
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect: NSInsetRect(self.frame, -400, -400)];
+    self.physicsBody.categoryBitMask = 1;
+    self.physicsBody.contactTestBitMask =  2;
+    self.physicsWorld.contactDelegate = self;
 
     SKNode *floor = [self createFloor];
     [self addChild: floor];
@@ -96,6 +103,15 @@ CGVector RandomVelocity() {
     NSArray *actions = @[fadeInAction, [SKAction waitForDuration: 1.0], scaleUpAction, scaleDownAction,
          [SKAction repeatActionForever: loopAction]];
     [node runAction: [SKAction sequence: actions]];
+}
+
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+    if (contact.bodyA.categoryBitMask == 2 && contact.bodyB.categoryBitMask == 1) {
+        [contact.bodyA.node removeFromParent];
+    }
+    if (contact.bodyB.categoryBitMask == 2 && contact.bodyA.categoryBitMask == 1) {
+        [contact.bodyB.node removeFromParent];
+    }
 }
 
 @end

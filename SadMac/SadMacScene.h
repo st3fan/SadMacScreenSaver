@@ -4,7 +4,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SadMacScene: SKScene {
+@interface SadMacScene: SKScene <SKPhysicsContactDelegate> {
     BOOL _isPreview;
 }
 - (instancetype) initWithSize:(CGSize)size isPreview: (BOOL) isPreview;
