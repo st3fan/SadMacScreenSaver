@@ -27,11 +27,11 @@
 CGFloat RandomScaleFactor() {
     int r = random() % 1000;
     if (r > 900) {
-        return 0.5; // * (isPreview ? PreviewScaleFactor : 1.0);
+        return 0.5;
     } else if (r > 450) {
-        return 0.125; // * (isPreview ? PreviewScaleFactor : 1.0);
+        return 0.125;
     } else {
-        return 0.25; // * (isPreview ? PreviewScaleFactor : 1.0);
+        return 0.25;
     }
 }
 
@@ -48,7 +48,7 @@ CGVector RandomVelocity() {
     NSString *path = [[NSBundle bundleForClass: [self class]] pathForImageResource: @"SadMac"];
     SKSpriteNode *node = [SKSpriteNode spriteNodeWithImageNamed: path];
     if (node != nil) {
-        CGFloat scaleFactor = RandomScaleFactor();
+        CGFloat scaleFactor = RandomScaleFactor(_isPreview);
         [node scaleToSize: CGSizeMake(node.size.width * scaleFactor, node.size.height * scaleFactor)];
         node.position = position;
         node.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize: node.size];
