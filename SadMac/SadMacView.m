@@ -29,7 +29,7 @@
         self.sceneView = [[MySKView alloc] initWithFrame: self.frame];
         self.sceneView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
         [self addSubview: self.sceneView];
-        self.scene = [[SadMacScene alloc] initWithSize: self.frame.size isPreview: NO]; // TODO _isPreview?
+        self.scene = [[SadMacScene alloc] initWithSize: self.frame.size isPreview: isPreview];
         [self.sceneView presentScene: self.scene];
     }
     return self;
@@ -45,4 +45,11 @@
     return nil;
 }
 
+- (void)keyDown:(NSEvent *)event {
+    // This is nice for running from Xcode - it is otherwise hard to kill the saver.
+    if ([[event charactersIgnoringModifiers] isEqualToString: @"q"]) {
+        exit(0);
+    }
+    [super keyDown: event];
+}
 @end
