@@ -26,11 +26,25 @@
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
     if (self = [super initWithFrame:frame isPreview:isPreview]) {
-        self.sceneView = [[MySKView alloc] initWithFrame: self.frame];
-        self.sceneView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
-        [self addSubview: self.sceneView];
-        self.scene = [[SadMacScene alloc] initWithSize: self.frame.size isPreview: isPreview];
-        [self.sceneView presentScene: self.scene];
+        if (isPreview) {
+            // This is a bit hacky but it works ...
+            NSTextField *textField = [[NSTextField alloc] initWithFrame: NSMakeRect(0, (self.bounds.size.height-70)/2, self.bounds.size.width, 70)];
+            [textField setTextColor: NSColor.whiteColor];
+            [textField setStringValue:@"Sad Mac Screen Saver 1.0\nStefan Arentz, September 2018\ngithub.com/st3fan/SadMacScreenSaver"];
+            [textField setBezeled:NO];
+            [textField setDrawsBackground:NO];
+            [textField setEditable:NO];
+            [textField setSelectable:NO];
+            [textField setAlignment: NSTextAlignmentCenter];
+            [textField setUsesSingleLineMode: NO];
+            [self addSubview:textField];
+        } else {
+            self.sceneView = [[MySKView alloc] initWithFrame: self.frame];
+            self.sceneView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+            [self addSubview: self.sceneView];
+            self.scene = [[SadMacScene alloc] initWithSize: self.frame.size isPreview: isPreview];
+            [self.sceneView presentScene: self.scene];
+        }
     }
     return self;
 }
@@ -52,4 +66,5 @@
     }
     [super keyDown: event];
 }
+
 @end
