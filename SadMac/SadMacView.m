@@ -26,11 +26,11 @@
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
     if (self = [super initWithFrame:frame isPreview:isPreview]) {
-        if (isPreview) {
+        if (frame.size.width < 400) {
             // This is a bit hacky but it works ...
             NSTextField *textField = [[NSTextField alloc] initWithFrame: NSMakeRect(0, (self.bounds.size.height-70)/2, self.bounds.size.width, 70)];
             [textField setTextColor: NSColor.whiteColor];
-            [textField setStringValue:@"Sad Mac Screen Saver 1.1\nStefan Arentz, September 2018\ngithub.com/st3fan/SadMacScreenSaver"];
+            [textField setStringValue:@"Sad Mac 1.2\nStefan Arentz, September 2020\ngithub.com/st3fan/SadMacScreenSaver"];
             [textField setBezeled:NO];
             [textField setDrawsBackground:NO];
             [textField setEditable:NO];
