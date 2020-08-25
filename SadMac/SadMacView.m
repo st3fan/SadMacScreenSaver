@@ -30,7 +30,7 @@
             // This is a bit hacky but it works ...
             NSTextField *textField = [[NSTextField alloc] initWithFrame: NSMakeRect(0, (self.bounds.size.height-70)/2, self.bounds.size.width, 70)];
             [textField setTextColor: NSColor.whiteColor];
-            [textField setStringValue:@"Sad Mac 1.2\nStefan Arentz, September 2020\ngithub.com/st3fan/SadMacScreenSaver"];
+            [textField setStringValue:@"Sad Mac 1.3\nStefan Arentz, August 2020\ngithub.com/st3fan/SadMacScreenSaver"];
             [textField setBezeled:NO];
             [textField setDrawsBackground:NO];
             [textField setEditable:NO];
