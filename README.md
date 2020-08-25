@@ -18,7 +18,7 @@ $ ditto -c -k --keepParent SadMac.saver SadMac.zip
 Then send it to the _Notarization Service_:
 
 ```
-$ xcrun altool --notarize-app --primary-bundle-id "ca.hogtownsoftware.SadMac.zip" --username $APPSTORE_CONNECT_USERNAME --file SadMac.zip
+$ xcrun altool --notarize-app --primary-bundle-id "$ORG_IDENTIFIER.SadMac.zip" --username $APPSTORE_CONNECT_USERNAME --file SadMac.zip
 No errors uploading 'SadMac.zip'.
 RequestUUID = ad7daf8e-fae4-475a-b117-dfd572e17a34
 ```
