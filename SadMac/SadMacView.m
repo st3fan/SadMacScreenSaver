@@ -39,7 +39,7 @@
             [textField setUsesSingleLineMode: NO];
             [self addSubview:textField];
         } else {
-            self.sceneView = [[MySKView alloc] initWithFrame: self.frame];
+            self.sceneView = [[MySKView alloc] initWithFrame: self.bounds];
             self.sceneView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
             [self addSubview: self.sceneView];
             self.scene = [[SadMacScene alloc] initWithSize: self.frame.size isPreview: isPreview];
