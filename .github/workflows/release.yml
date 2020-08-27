@@ -1,0 +1,77 @@
+
+name: Release
+
+on:
+  push:
+    tags: [ v* ]
+    
+jobs:
+  build:
+    runs-on: macos-10.15
+    timeout-minutes: 10
+    steps:
+    - name: Checkout Project
+      uses: actions/checkout@v2
+      
+    - name: Find Scheme of Default Project
+      run: echo "::set-env name=SCHEME::$(xcodebuild -list -json | jq -r '.project.schemes[0]')"
+      
+    - name: Set environment variables from project settings
+      run: |
+        function set-env-from-proj { 
+          echo "::set-env name=$1::$(xcodebuild -scheme "$SCHEME" -showBuildSettings | grep " $1 " | sed "s/[ ]*$1 = //")"
+        }
+        set-env-from-proj FULL_PRODUCT_NAME
+        set-env-from-proj INSTALL_PATH
+        set-env-from-proj PRODUCT_BUNDLE_IDENTIFIER
+        set-env-from-proj PRODUCT_MODULE_NAME
+        set-env-from-proj PRODUCT_NAME
+        set-env-from-proj PROJECT_NAME
+        
+    - name: Get the Marketing Version
+      run: echo "::set-env name=MARKETING_VERSION::$(agvtool what-marketing-version -terse1)"
+      
+    - name: Test Build (Local Signing)
+      run: xcodebuild -scheme "$SCHEME" CODE_SIGN_IDENTITY=-
+      
+    - name: Import signing certificate into keychain
+      run: |
+        KEYCHAIN_FILE=default.keychain
+        KEYCHAIN_PASSWORD=myvoiceismypassport
+        security create-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_FILE
+        security default-keychain -s $KEYCHAIN_FILE
+        security unlock-keychain -p $KEYCHAIN_PASSWORD $KEYCHAIN_FILE
+        security import <(echo $SIGNING_CERTIFICATE_P12_DATA | base64 --decode) \
+                          -f pkcs12 \
+                          -k $KEYCHAIN_FILE \
+                          -P $SIGNING_CERTIFICATE_PASSWORD \
+                          -T /usr/bin/codesign
+        security set-key-partition-list -S apple-tool:,apple: -s -k $KEYCHAIN_PASSWORD $KEYCHAIN_FILE
+      env:
+        SIGNING_CERTIFICATE_P12_DATA: ${{ secrets.SIGNING_CERTIFICATE_P12_DATA }}
+        SIGNING_CERTIFICATE_PASSWORD: ${{ secrets.SIGNING_CERTIFICATE_PASSWORD }}
+        
+    - name: Build (Signed) & Install
+      run: xcodebuild -scheme "$SCHEME" install DSTROOT=build/root
+      
+    - name: Package for Notarization
+      run:  ditto -V -c -k --keepParent "build/root/$INSTALL_PATH/$FULL_PRODUCT_NAME" build/$PRODUCT_MODULE_NAME.zip
+      
+    - name: Notarize
+      run: npx notarize-cli --file "build/$PRODUCT_MODULE_NAME.zip" --no-staple
+      env:
+        NOTARIZE_USERNAME: ${{ secrets.NOTARIZE_USERNAME }}
+        NOTARIZE_PASSWORD: ${{ secrets.NOTARIZE_PASSWORD }}
+
+    - name: Staple
+      run: xcrun stapler staple "build/root/$INSTALL_PATH/$FULL_PRODUCT_NAME"
+  
+    - name: Package for Distribution
+      run: ditto -V -c -k --keepParent "build/root/$INSTALL_PATH/$FULL_PRODUCT_NAME" "build/$PRODUCT_MODULE_NAME-$MARKETING_VERSION.zip"
+    
+    - name: Release app
+      uses: softprops/action-gh-release@v1
+      with:
+        files: build/${{ env.PRODUCT_MODULE_NAME }}-${{ env.MARKETING_VERSION }}.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
